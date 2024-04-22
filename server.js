@@ -4,30 +4,35 @@ const app = express();
 const pastWorks = [
     {
         project_id: 101,
+        iName: "OrchardOs",
         name: "Orchard OS",
         description: "A revolutionary operating system designed for seamless integration across desktop and mobile devices, featuring AI-driven personal assistance.",
         completion_date: "2021-08-15"
     },
     {
         project_id: 102,
+        iName: "GoldenSeedCloudStorage",
         name: "Golden Seed Cloud Storage",
         description: "Highly secure cloud storage service offering encrypted file storage and real-time collaboration tools for businesses.",
         completion_date: "2022-03-22"
     },
     {
         project_id: 103,
+        iName: "BranchMetricsAnalytics",
         name: "Branch Metrics Analytics",
         description: "Advanced analytics platform that uses machine learning to provide insights into user behavior and system performance.",
         completion_date: "2022-11-30"
     },
     {
         project_id: 104,
+        iName: "AppleCoreIoTSolutions",
         name: "AppleCore IoT Solutions",
         description: "Internet of Things (IoT) solutions that allow devices to communicate efficiently, enhancing smart home and smart city applications.",
         completion_date: "2023-01-10"
     },
     {
         project_id: 105,
+        iName: "CiderSecuritySuite",
         name: "Cider Security Suite",
         description: "Comprehensive security suite providing end-to-end protection from cyber threats, including advanced threat detection and response systems.",
         completion_date: "2023-04-17"
@@ -130,3 +135,16 @@ app.get('/contact', (req, res) => {
 app.get('/links', (req, res) => {
     res.render('links.ejs');
 });
+
+app.get('/pastwork/:project', (req, res) => {
+    const project = req.params.project;
+    for (let i = 0; i < pastWorks.length; i++) {
+        if (project === pastWorks[i].name) {
+            res.render('show.ejs', {
+                name: pastWorks[i].name,
+                description: pastWorks[i].description,
+                completion: pastWorks[i].completion_date
+            })
+        }
+    }
+})
