@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-image: url('https://images.pexels.com/photos/1097930/pexels-photo-1097930.jpeg');
+}
+
+nav {
+    
+}
