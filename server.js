@@ -36,66 +36,67 @@ const pastWorks = [
 
 const staffList = [
     {
-        staff_id: BA001,
+        staff_id: "BA001",
         name: "Alice Johnson",
         role: "Chief Executive Officer",
         department: "Executive"
     },
     {
-        staff_id: BA002,
+        staff_id: "BA002",
         name: "Bob Smith",
         role: "Chief Technology Officer",
         department: "Technology"
     },
     {
-        staff_id: BA003,
+        staff_id: "BA003",
         name: "Carol Lee",
         role: "Director of Engineering",
         department: "Engineering"
     },
     {
-        staff_id: BA004,
+        staff_id: "BA004",
         name: "David Brown",
         role: "Product Manager",
         department: "Product"
     },
     {
-        staff_id: BA005,
+        staff_id: "BA005",
         name: "Eva Green",
         role: "Head of Security",
         department: "Security"
     },
     {
-        staff_id: BA006,
+        staff_id: "BA006",
         name: "Frank Knight",
         role: "Lead Data Scientist",
         department: "Data Science"
     },
     {
-        staff_id: BA007,
+        staff_id: "BA007",
         name: "Grace Hopper",
         role: "Senior Software Engineer",
         department: "Software Development"
     },
     {
-        staff_id: BA008,
+        staff_id: "BA008",
         name: "Henry Ford",
         role: "Marketing Director",
         department: "Marketing"
     },
     {
-        staff_id: BA009,
+        staff_id: "BA009",
         name: "Irene Adler",
         role: "Chief Financial Officer",
         department: "Finance"
     },
     {
-        staff_id: BA010,
+        staff_id: "BA010",
         name: "John Doe",
         role: "Human Resources Manager",
         department: "Human Resources"
     }
 ]
+
 
 
 app.listen(3000, () => {
@@ -106,3 +107,26 @@ app.get('/', (req, res) => {
     res.render('homepage.ejs');
 });
 
+app.get('/companyhistory', (req, res) => {
+    res.render('companyhistory.ejs');
+});
+
+app.get('/pastwork', (req, res) => {
+    res.render('pastwork.ejs', {
+        pastworks: pastWorks
+    });
+});
+
+app.get('/staff', (req, res) => {
+    res.render('staff.ejs', {
+        staff: staffList
+    });
+});
+
+app.get('/contact', (req, res) => {
+    res.render('contact.ejs');
+});
+
+app.get('/links', (req, res) => {
+    res.render('links.ejs');
+});

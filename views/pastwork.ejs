@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Past Works</title>
 </head>
 <body>
-    
+    <%- include('./partials/navbar') %>
+    <% pastworks.forEach(e => { %>
+     <h3>Project Name: <%= e.name %></h3>
+     <p>Description: <%= e.description %></p>
+     <p>Completion Date: <%= e.completion_date %></p>
+    <% }) %>
 </body>
 </html>
