@@ -144,6 +144,20 @@ app.get('/pastwork/:project', (req, res) => {
                 name: pastWorks[i].name,
                 description: pastWorks[i].description,
                 completion: pastWorks[i].completion_date
+            });
+        };
+    };
+});
+
+app.get('/staff/:name', (req, res) => {
+    const name = req.params.name;
+    for (let i = 0; i < staffList.length; i++) {
+        if (name === staffList[i].name) {
+            res.render('staffshow.ejs', {
+                name: staffList[i].name,
+                department: staffList[i].department,
+                role: staffList[i].role,
+                id: staffList[i].staff_id
             })
         }
     }

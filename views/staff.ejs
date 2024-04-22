@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Staff</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include('./partials/navbar') %>
-    <% staff.forEach(e => { %>
-     <h3><%= e.name %></h3>
-     <p><%= e.role %></p>
-     <p><%= e.department %></p>
-    <% }) %>
-</body>
+    <ul>
+      <% staff.forEach(e => { %>
+      <a href="/staff/<%= e.name %>">
+        <li><%= e.name %></li>
+      </a>
+      <% }); %>
+    </ul>
+  </body>
 </html>

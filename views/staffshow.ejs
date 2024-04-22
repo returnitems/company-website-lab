@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Past Works</title>
+    <title><%= name %></title>
 </head>
 <body>
     <%- include('./partials/navbar') %>
-    <ul>
-    <% pastworks.forEach(e => { %>
-        <a href="/pastwork/<%= e.name %>">
-        <li><%= e.name %></li>
-        </a>
-    <% }) %>
-    </ul>
+    <h1><%= name %></h1>
+    <p>Department: <%= department %></p>
+    <p>Role: <%= role %></p>
+    <p>Staff ID: <%= id %></p>
 </body>
 </html>
